@@ -3,7 +3,13 @@
 # This code will enforce enabling guardduty and integration to master guardduty on all member account when account is created once Boolean is set to true.
 # When account is added to master guardduty , invitation will be sent to memeber account and invitation will showup in tenant guardduty console. They have to manually account invitation for one time.
 
+provider "aws" {
+  alias = "gracemonitoring"
 
+  assume_role {
+    role_arn = "arn:aws:iam::${var.grace_monitoring_prod_account_id}:role/OrganizationAccountAccessRole"
+  }
+}
 
 resource "aws_guardduty_detector" "aws_guardduty_member" {
   count      = "${var.enable_member_guardduty == "true" ? 1 : 0}"

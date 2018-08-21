@@ -32,3 +32,7 @@ variable "guardduty_master_detector_id" {
 variable "authlanding_prod_account_id" {
   description = "AWS Account ID of the Authlanding account"
 }
+
+variable "grace_monitoring_prod_account_id" {
+  description = "AWS Account ID of the monitoring account"
+}
