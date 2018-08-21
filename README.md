@@ -36,11 +36,11 @@ You must supply the following variables to the module:
 
 * name: a simple name that will be used for displaying the resulting budget notification within AWS.
 * email: Email address of the tenant owner (will be assigned to the root account).
-* authlanding_prod_account_id: This is the subaccount ID of the authlanding AWS account. The authlanding account hosts IAM accounts with access to the platform. If you're using this module in a setup outside of GRACE, you should consider consulting the (grace-core repo)[https://github.com/gsa/grace-core] for more information.
+* authlanding_prod_account_id: This is the subaccount ID of the authlanding AWS account. The authlanding account hosts IAM accounts with access to the platform. If you're using this module in a setup outside of GRACE, you should consider consulting the [grace-core repo](https://github.com/gsa/grace-core) for more information.
 * create_iam_roles: Boolean that defines whether or not the default IAM roles should be created. This will be forced to "true" in a future revision.
-* tenant_admin_iam_role_list: The SSM parameter that corresponds to the admin users in authlanding. Consult (grace-core)[https://github.com/gsa/grace-core] for more information.
-* tenant_poweruser_iam_role_list: The SSM parameter that corresponds to the powerusers in authlanding. Consult (grace-core)[https://github.com/gsa/grace-core] for more information.
-* tenant_viewonly_iam_role_list: The SSM parameter that corresponds to the viewonly users in authlanding.  Consult (grace-core)[https://github.com/gsa/grace-core] for more information.
+* tenant_admin_iam_role_list: The SSM parameter that corresponds to the admin users in authlanding. Consult [grace-core repo](https://github.com/gsa/grace-core) for more information.
+* tenant_poweruser_iam_role_list: The SSM parameter that corresponds to the powerusers in authlanding. Consult [grace-core repo](https://github.com/gsa/grace-core) for more information.
+* tenant_viewonly_iam_role_list: The SSM parameter that corresponds to the viewonly users in authlanding.  Consult [grace-core repo](https://github.com/gsa/grace-core) for more information.
 
 ### Authors
 
