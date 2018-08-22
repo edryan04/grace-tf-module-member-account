@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  terraform:
+    docker:
+      - image: hashicorp/terraform
+        environment:
+          AWS_DEFAULT_REGION: us-east-1
+    steps:
+      - checkout
+      - run:
+          name: EKK Stack - Set up Terraform
+          command: cd terraform/modules/member_account && terraform init -backend=false
+      - run:
+          name: EKK Stack - Validate Terraform
+          command: cd terraform/modules/member_account && terraform validate -check-variables=false
+
+workflows:
+  version: 2
+
+  validate:
+    jobs:
+      - terraform
