@@ -13,6 +13,9 @@ jobs:
       - run:
           name: Validate Terraform
           command: cd terraform/modules/member_account && terraform validate -check-variables=false
+      - run:
+          name: Static Code Analysis with Terrascan
+          command: terrascan -l terraform/modules/member_account
 
 workflows:
   version: 2
