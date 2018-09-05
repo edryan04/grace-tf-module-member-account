@@ -13,10 +13,3 @@ jobs:
       - run:
           name: Validate Terraform
           command: cd terraform/modules/member_account && terraform validate -check-variables=false
-
-workflows:
-  version: 2
-
-  validate:
-    jobs:
-      - build
