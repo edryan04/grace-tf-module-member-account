@@ -1,15 +1,15 @@
 
-# grace-tf-module-member-account
+# grace-tf-module-member-account [![CircleCI](https://circleci.com/gh/GSA/grace-tf-module-member-account.svg?style=svg)](https://circleci.com/gh/GSA/grace-tf-module-member-account)
 
 Terraform module for AWS subaccounts that is used in GRACE. This module is a supporting module that is required for [grace-core](https://github.com/GSA/grace-core) but may be used independently by other projects if required.
 
 ## Contributors
 
-This module was created by the GRACE DevSecOps team. The master branch is maintained by this same group of contributors. For information on contributing, see [CONTRIBUTING.md](https://github.com/gsa/grace-tf-module/budget/CONTRIBUTING.md)
+This module was created by the GRACE DevSecOps team. The master branch is maintained by this same group of contributors. For information on contributing, see [CONTRIBUTING.md](https://github.com/gsa/grace-tf-member-account/CONTRIBUTING.md)
 
 ## License
 
-The license for this software is documented in [LICENSE.md](https://github.com/gsa/grace-tf-module-budget/LICENSE.md)
+The license for this software is documented in [LICENSE.md](https://github.com/gsa/grace-tf-module-member-account/LICENSE.md)
 
 ## Instructions
 
@@ -34,9 +34,9 @@ Use Terraform to call this module in your code. Below is an example to create a 
 
 You must supply the following variables to the module:
 
-* name: a simple name that will be used for displaying the resulting budget notification within AWS.
+* name: The name of the account.  Must be unique within GRACE AWS Organization.
 * email: Email address of the tenant owner (will be assigned to the root account).
-* authlanding_prod_account_id: This is the subaccount ID of the authlanding AWS account. The authlanding account hosts IAM accounts with access to the platform. If you're using this module in a setup outside of GRACE, you should consider consulting the [grace-core repo](https://github.com/gsa/grace-core) for more information.
+* authlanding_prod_account_id: This is the subaccount ID of the GRACE authlanding AWS account. The authlanding account hosts IAM accounts with access to the platform. If you're using this module in a setup outside of GRACE, you should consider consulting the [grace-core repo](https://github.com/gsa/grace-core) for more information.
 * create_iam_roles: Boolean that defines whether or not the default IAM roles should be created. This will be forced to "true" in a future revision.
 * tenant_admin_iam_role_list: The SSM parameter that corresponds to the admin users in authlanding. Consult [grace-core repo](https://github.com/gsa/grace-core) for more information.
 * tenant_poweruser_iam_role_list: The SSM parameter that corresponds to the powerusers in authlanding. Consult [grace-core repo](https://github.com/gsa/grace-core) for more information.
@@ -48,4 +48,4 @@ You must supply the following variables to the module:
 
 #### Developer / Company / Employer
 
-General Services Administration Information Technology (GSAIT)
+Developed by SAIC, Inc. under contract GS00Q09BGD0048 for General Services Administration Information Technology (GSAIT)
