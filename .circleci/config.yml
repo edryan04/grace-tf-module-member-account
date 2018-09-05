@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  terraform:
+  build:
     docker:
       - image: hashicorp/terraform
         environment:
@@ -13,19 +13,10 @@ jobs:
       - run:
           name: Validate Terraform
           command: cd terraform/modules/member_account && terraform validate -check-variables=false
-      - run:
-          name: Install python
-          command: yum install python3
-      - run:
-          name: Install Terrascan
-          command: pip install terrascan
-      - run:
-          name: Static Code Analysis with Terrascan
-          command: terrascan -l terraform/modules/member_account
 
 workflows:
   version: 2
 
   validate:
     jobs:
-      - terraform
+      - build
