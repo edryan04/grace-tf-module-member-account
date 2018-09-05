@@ -15,7 +15,7 @@ jobs:
           command: cd terraform/modules/member_account && terraform validate -check-variables=false
       - run:
           name: Install python
-          command: apt-get install python3
+          command: yum install python3
       - run:
           name: Install Terrascan
           command: pip install terrascan
