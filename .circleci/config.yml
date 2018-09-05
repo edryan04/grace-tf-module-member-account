@@ -14,6 +14,9 @@ jobs:
           name: Validate Terraform
           command: cd terraform/modules/member_account && terraform validate -check-variables=false
       - run:
+          name: Install Terrascan
+          command: pip install terrascan
+      - run:
           name: Static Code Analysis with Terrascan
           command: terrascan -l terraform/modules/member_account
 
