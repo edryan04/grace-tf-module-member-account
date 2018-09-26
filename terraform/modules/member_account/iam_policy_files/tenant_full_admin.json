@@ -43,6 +43,23 @@
         "xray:*"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "Atom0",
+      "Effect": "Deny",
+      "Action" : [
+        "ssm:DeleteParameter",
+        "ssm:DeleteParameters",
+        "ssm:DescribeParameters",
+        "ssm:GetParameter",
+        "ssm:GetParameterHistory",
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath",
+        "ssm:LabelParameterVersion",
+        "ssm:PutParameter",
+        "secretsmanager:*"
+      ],
+      "Resource": "*"
     }
   ]
 }

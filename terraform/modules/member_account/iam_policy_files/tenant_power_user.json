@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Atom0",
+      "Effect": "Allow",
+      "Action": [
+        "batch:CancelJob",
+        "batch:SubmitJob",
+        "ec2:RebootInstances",
+        "ec2:RunInstances",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ecs:RunTask",
+        "ecs:StartTask",
+        "ecs:StopTask",
+        "elasticache:RebootCacheCluster",
+        "elasticbeanstalk:RestartAppServer",
+        "glacier:InitiateJob",
+        "lambda:InvokeAsync",
+        "lambda:InvokeFunction",
+        "rds:FailoverDBCluster",
+        "rds:RebootDBInstance",
+        "rds:StartDBInstnace",
+        "rds:StopDBInstance",
+        "redshift:RebootCluster",
+        "snowball:CancelJob",
+        "storagegateway:ShutdownGateway",
+        "storagegateway:StartGateway"      
+      ],
+      "Resource": "*"
+    }
+  ]
+}

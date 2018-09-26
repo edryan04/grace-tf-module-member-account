@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Atom0",
+      "Effect": "Allow",
+      "Action": [
+        "batch:*",
+        "dynamodb:*",
+        "ec2:*",
+        "ecr:*",
+        "ecs:*",
+        "eks:*",
+        "elasticache:*",
+        "elasticbeanstalk:*",
+        "elasticfilesystem:*",
+        "glacier:*",
+        "lambda:*",
+        "rds:*",
+        "redshift:*",
+        "s3:*",
+        "snowball:*",
+        "storagegateway:*",
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Atom1",
+      "Effect": "Deny",
+      "Action" : [
+        "ssm:DeleteParameter",
+        "ssm:DeleteParameters",
+        "ssm:DescribeParameters",
+        "ssm:GetParameter",
+        "ssm:GetParameterHistory",
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath",
+        "ssm:LabelParameterVersion",
+        "ssm:PutParameter",
+        "secretsmanager:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
