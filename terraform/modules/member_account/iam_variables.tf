@@ -27,3 +27,8 @@ variable "tenant_viewonly_iam_role_list" {
   type    = "list"
   default = [""]
 }
+
+variable "platform_admin_iam_role_list" {
+  type    = "list"
+  default = [""]
+}
