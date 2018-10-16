@@ -66,3 +66,26 @@ resource "aws_iam_role" "tenant_view_only_role" {
 }
 EOF
 }
+
+resource "aws_iam_role" "platform_admin_role" {
+  count = "${var.create_iam_roles == "true" ? 1 : 0}"
+
+  provider = "aws.child"
+
+  name = "${var.platform_admin_role_name}"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": ${jsonencode(concat(formatlist("arn:aws:iam::%s:user/%s", var.authlanding_prod_account_id, var.platform_admin_iam_role_list)))}
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
